@@ -25,7 +25,7 @@ COPY --from=deps /usr/src/app/prisma ./prisma
 COPY . .
 
 # Generar el cliente de Prisma
-RUN npx prisma generate && prisma migrate deploy
+RUN npx prisma generate && npx prisma migrate deploy
 
 RUN pnpm run build && \
     pnpm install --prod --frozen-lockfile && \
