@@ -14,6 +14,10 @@ RUN corepack enable && corepack prepare pnpm@10.6.3 --activate && \
 # 🟢 Builder
 FROM node:21-alpine3.19 AS build
 
+
+ARG PRODUCTS_DATABASE_URL
+ENV DATABASE_URL = $PRODUCTS_DATABASE_URL
+
 WORKDIR /usr/src/app
 
 RUN corepack enable && corepack prepare pnpm@10.6.3 --activate
