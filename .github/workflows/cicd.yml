@@ -27,8 +27,7 @@ jobs:
             -t naluengas/microservicios-nestjs:${{ github.event.repository.name }} \
             -f dockerfile.prod \
             --platform=linux/amd64 \
-            --build-arg \
-              PRODUCTS_DATABASE_URL=${{ secrets.PRODUCTS_DATABASE_URL }} \
+            --build-arg PRODUCTS_DATABASE_URL=${{ secrets.PRODUCTS_DATABASE_URL }} \
             .
 
       # Sube la imagen de Docker a Docker Hub
